@@ -6,6 +6,7 @@
 
 - PHP
 - LARAVEL
+- BLADE
 - HTML5
 - CSS3
 - DOCKER
