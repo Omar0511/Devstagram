@@ -60,5 +60,6 @@
 - Es un CLI para comunicarte, interactuar con los archivos de DOCKER para arrancar tus servicios, llamar artisan o instalar dependencias NPM
 - Correr o Levantar proyecto de Laravel sin DOCKER:
   - **php artisan serve**
-- 
+- Una vez creado el alías, solo ejecutamos:
+  - **sail up -d** 
 
