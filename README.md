@@ -14,6 +14,14 @@
 - DOCKER
 - SAIL
 - MYSQL
+- VITE
+- TAILWIND CSS
+  - Instalación: **sail npm install -D tailwindcss postcss autoprefixer**
+  - Después: **npx tailwindcss init -p**
+    - Nos creará el archivo de configuración, si marca error ejecutamos:
+      - **sail npm install -D tailwindcss@3 postcss autoprefixer** 
+      - Después: **sail npx tailwindcss init -p**
+-   
 
 ### Creación del proyecto
 
@@ -62,4 +70,14 @@
   - **php artisan serve**
 - Una vez creado el **_alías_**, solo ejecutamos:
   - **sail up -d** 
+- Si marca error, realizamos lo siguiente:
+  - ```
+        PS C:\Windows\system32> wsl --list --verbose
+        NAME              STATE           VERSION
+        * docker-desktop    Running         2
+        Ubuntu            Stopped         2
+        PS C:\Windows\system32> wsl --set-default Ubuntu
+        La operación se completó correctamente.
+        PS C:\Windows\system32> wsl
+    ``` 
 
