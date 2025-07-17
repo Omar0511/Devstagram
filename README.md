@@ -83,3 +83,5 @@
 - Abrimos otra terminal y ejecutamos:
   - **sail npm run dev**
 - Si no lee los estilos, modificamos en el archivo: tailwind.config.js, la ruta de los archivos y ya ejecutamos el comando
+- Si los estilos no se están refrescando, ejectuamos en otra terminal, corriendo el **sail npm run dev**:
+  - **sail npm run watch**
