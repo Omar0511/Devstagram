@@ -9,16 +9,6 @@
         @vite('resources/css/app.css')
     </head>
     <body>
-        <nav>
-            <a href="/">Principal</a>
-            <a href="/nosotros">Nostros</a>
-        </nav>
-
-        {{-- Yield: lo registra como Contenedor para usarlo en otro archivo y que sea dinámico --}}
-        <h1 class="text-4xl font-extrabold">@yield('titulo')</h1>
-
-        <hr>
-
-        <h2>@yield('contenido')</h2>
+        
     </body>
 </html>
