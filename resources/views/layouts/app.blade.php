@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Devstagram - @yield('titulo')</title>
+        {{-- Se agrega para poder usar los estilos de TAILWINDCSS --}}
+        @vite('resources/css/app.css')
     </head>
     <body>
         <nav>
@@ -13,7 +15,7 @@
         </nav>
 
         {{-- Yield: lo registra como Contenedor para usarlo en otro archivo y que sea dinámico --}}
-        <h1>@yield('titulo')</h1>
+        <h1 class="text-4xl font-extrabold">@yield('titulo')</h1>
 
         <hr>
 

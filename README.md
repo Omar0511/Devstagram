@@ -80,4 +80,7 @@
         La operación se completó correctamente.
         PS C:\Windows\system32> wsl
     ``` 
-
+- Una vez instalado: **TAILWINDCSS**, abrimos: vite.config.js y comentamos las líneas relacionadas con **TAILWIND**
+- Abrimos otra terminal y ejecutamos:
+  - **sail npm run dev**
+- Si no lee los estilos, modificamos en el archivo: tailwind.config.js, la ruta de los archivos y ya ejecutamos el comando
