@@ -28,7 +28,7 @@
             @yield('contenido')
         </main>
 
-        <footer class="text-center p-5 text-gray-500 font-bold uppercase">
+        <footer class="mt-10 text-center p-5 text-gray-500 font-bold uppercase">
             DevStagra - Todos los derechos reservados
             {{-- Puede ser esta forma --}}
             {{-- @php echo date('Y') @endphp --}}
