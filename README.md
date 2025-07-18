@@ -85,3 +85,34 @@
 - Si no lee los estilos, modificamos en el archivo: tailwind.config.js, la ruta de los archivos y ya ejecutamos el comando
 - Si los estilos no se están refrescando, ejectuamos en otra terminal, corriendo el **sail npm run dev**:
   - **sail npm run watch**
+
+##### MVC
+
+- ¿Qué es?
+  - Model View Controller
+  - Es un patrón de arquitectura de software que permite la separación de obligaciones de cada pieza de tu código.
+  - Enfatiza la separación de la lógica de programación con la presentación
+- Ventajas:
+  - NO mejora el performance del código, tampoco da seguridad; pero tu código tendrá un mejor orden y será fácil de mantener.
+  - En un grupo de trabajo, el tener el código ordenado permite que más de una persona pueda entender que es lo que hace cada parte de él.
+  - Aprender MVC, te hará que otras tecnologías como: NEST, RAILS, DJANGO, NET CORE, SPRING BOOT, te sean más sencillas de aprender.
+- Piezas:
+  - M = Model o Modelo
+  - V = View o Vista
+  - C = Controller o Controlador
+- MODELO:
+  - Encargado de todas las interacciones en la base de datos, obtener datos, actualizarlos y eliminar.
+  - Se encarga de consultar una base de datos, obtiene la información pero no la muestra, eso es trabajo de la vista.
+  - Tampoco de encarga de actualizar la información directamente; es el Controlador quien decide cuándo llamarlo. 
+- VISTA:
+  - Se encarga de todo lo que se ve en pantalla (HTML).
+  - Laravel tiene un Template Engine llamado: **BLADE**, para mostrar los datos.
+  - Si utilizas: REACT, VUE, ANGULAR, SVELTE, estos serían tu vista.
+  - El Modelo consulta la base de datos, pero es por medio del Controlador que se decide que Vista hay que llamar y que datos presentar.
+- CONTROLADOR:
+  - Es el que comunica modelo y vista; antes de que el Modelo consulte la base de datos, el Controlador es el encargado de llamar un Modelo en específico.
+  - Una vez consultado el Modelo, el Controlador recibe esa información, manda a llamar a la vista y le pasa la información.
+  - El Controlador es el que manda llamar la vista y modelos que se requieren en cada parte de tu aplicación.
+- ROUTER en MVC:
+  - Es el encargado de registrar todas las URL'S o ENDPOINTS que va a soportar nuestra aplicación.
+  - Ej: Si el usuario accede a: /clientes, el router ya tiene registrada esa ruta y un controlador con una función que sabe que Modelo debe llamar y que vista mostrar cuando el usuario visita esa URL.
