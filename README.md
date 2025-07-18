@@ -116,3 +116,27 @@
 - ROUTER en MVC:
   - Es el encargado de registrar todas las URL'S o ENDPOINTS que va a soportar nuestra aplicación.
   - Ej: Si el usuario accede a: /clientes, el router ya tiene registrada esa ruta y un controlador con una función que sabe que Modelo debe llamar y que vista mostrar cuando el usuario visita esa URL.
+
+##### ARTISAN
+
+- Artisan es el CLI (Command Line Interface) ya incluido.
+- Es un Script que existe en la base de tu proyecto de Laravel y cuenta con una gran cantidad de Scripts disponibles.
+- Estos comandos te permiten crear: MIGRACIONES, CONTROLADORES, MODELOS, POLICIES y muchos m'as...
+
+    # SAIL y ARTISAN
+
+    - En versiones anteriores (PHP < 7), los comandos de Artisan se usaban como:
+      - **php artisan**
+    - En nuevas versiones:
+      - **sail php artisan o sail artisan**
+    - En consola: 
+      - **wsl**
+    - dentro del proyecto ejecutamos:
+      - **sail artisan**
+    - nos arrojará los comandos que podemos usar en LARAVEL
+    - 
+
+- Creando un CONTROLADOR con ARTISAN:
+  - **sail artisan make:controller --help** -> para ver lo que podemos pasarle
+  - **sail artisan make:controller RegisterControllr** Ejemplo
+  - - **sail artisan make:controller Auth\\RegisterControllr** Si queremos crearlo en una Carpeta
