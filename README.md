@@ -134,7 +134,8 @@
     - dentro del proyecto ejecutamos:
       - **sail artisan**
     - nos arrojará los comandos que podemos usar en LARAVEL
-    - 
+    - Si llegará a marcar error en Laravel, algo relacionado con: **SESSIONS**, ejecutamos:
+      - **_sail php artisan migrate_**
 
 - Creando un CONTROLADOR con ARTISAN:
   - **sail artisan make:controller --help** -> para ver lo que podemos pasarle
