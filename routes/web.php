@@ -7,5 +7,11 @@ Route::get('/', function () {
     return view('principal');
 });
 
-Route::get('/crear-cuenta', [RegisterController::class, 'index'] );
-Route::post('/crear-cuenta', [RegisterController::class, 'store'] );
+/**
+ * ->name('register') en una ruta de Laravel tiene una función clave para nombrar rutas y facilitar su uso en todo el proyecto.
+ * Sino la ponemos en la siguiente línea como aquí abajo, tomará la anterior, es decir; la que se encuentra en la línea anterior,
+ * siempre y cuando ambas URLS se llamen iguales, tanto en el GET como en el POST, sino no va FUNCIONAR!!!
+ * Al agregarlo, en los enlaces a href=, lo llamaremos con: {{ ruoute('register' ) }}
+*/
+Route::get('/register', [RegisterController::class, 'index'] )->name('register');
+Route::post('/register', [RegisterController::class, 'store'] );
