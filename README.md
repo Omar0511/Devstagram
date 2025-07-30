@@ -141,3 +141,22 @@
   - **sail artisan make:controller --help** -> para ver lo que podemos pasarle
   - **sail artisan make:controller RegisterControllr** Ejemplo
   - - **sail artisan make:controller Auth\\RegisterControllr** Si queremos crearlo en una Carpeta
+
+## REQUEST
+
+- Tipos
+
+- Se usan en: **HTTP** y _API'S_
+- En **HTTP**, existen diferentes tipos de Request o tipos de petición:
+  - **_GET, POST, PUT, PATCH y DELETE_**
+- **GET**
+  - Es el más simple, cuando visitas un sitio web por default es un _GET_, y el método solo se utiliza para recuperar datos pero nunca debe enviar datos...
+- **POST**
+  - Se utiliza cuando mandas datos a un servidor, esto incluye información que llenas en un formulario o buscador.
+-  **PUT**
+   -  Es utilizado para actualizar un elemento, pero sino existe crea uno nuevo, es un reemplazo total de un registro.
+- **PATCH**
+  - Es utilizado para actualizar parcialmente un elemento o recurso.
+- **DELETE**
+  - Se utiliza para eliminar un recurso o elemento.
+- 
