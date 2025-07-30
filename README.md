@@ -159,4 +159,6 @@
   - Es utilizado para actualizar parcialmente un elemento o recurso.
 - **DELETE**
   - Se utiliza para eliminar un recurso o elemento.
+- **_@csrf_**
+  - Es recomendable ponerlo en los _FORMULARIOS_ para evitar ataques, es una directiva de Laravel
 - 

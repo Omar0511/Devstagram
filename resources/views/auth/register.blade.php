@@ -15,6 +15,7 @@
             <form action="/crear-cuenta" method="POST">
                 {{-- csrf: genera un campo oculto para evitar ataques, directiva de LARAVEL --}}
                 @csrf
+                
                 <div class="mb-5">
                     <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">Nombre</label>
 
