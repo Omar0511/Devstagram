@@ -161,4 +161,17 @@
   - Se utiliza para eliminar un recurso o elemento.
 - **_@csrf_**
   - Es recomendable ponerlo en los **_FORMULARIOS_** para evitar ataques, es una directiva de Laravel
-- 
+  
+## CONTROLLERS
+
+- Los Controllers van ayudarte a tener un código mejor organizado, además de una separación mayor en la funcionalidad de tus aplicaciones y sitios web.
+- Laravel tiene una convención a la hora de nombrar los métodos de tus controllers conocida como:
+  - **RESOURCE CONTROLLERS**
+- Esta convención ayuda bastante para tener todo mejor organizado
+
+| Verbo HTTP | URI                 | Acción  | Ruta             |
+| ---------- | ------------------- | ------- | ---------------- |
+| GET        | /clientes           | index   | clientes.index   |
+| POST       | /clientes           | store   | clientes.store   |
+| DELETE     | /clientes/{cliente} | destroy | clientes.destroy |
+
