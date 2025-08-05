@@ -21,6 +21,8 @@
     - Nos creará el archivo de configuración, si marca error ejecutamos:
       - **sail npm install -D tailwindcss@3 postcss autoprefixer** 
       - Después: **sail npx tailwindcss init -p**
+- Librería para mensajes dinámicos en LARAVEL **_$message_**
+  - **_git clone https://github.com/MarcoGomesr/laravel-validation-en-espanol.git resources/lang_**
 
 ### Creación del proyecto
 
