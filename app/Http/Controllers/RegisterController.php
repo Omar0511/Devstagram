@@ -25,7 +25,9 @@ class RegisterController extends Controller
         // dd($request->get('username') );
 
         $this->validate($request, [
-            'name' => 'required|min:5',
+            /* Puede estar como arreglo:
+            'name' => ['required', 'min:5'], */
+            'name' => 'required|max: 30',
             'email' => 'required',
             'username' => 'required',
             'password' => 'required',

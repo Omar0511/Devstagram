@@ -25,7 +25,10 @@
                         name="name"
                         id="name"
                         placeholder="Tu Nombre..."
-                        class="border p-3 w-full rounded-lg"
+                        {{-- El error, resaltará solo si existe un error, va de la mano con la directiva: error que esta debajo --}}
+                        class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
+                        {{-- Para mantener el valor ingresado en el INPUT --}}
+                        value="{{ old('name') }}"
                     >
 
                     @error('name')
@@ -33,7 +36,7 @@
                         {{-- <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">El Nombre es Obligatorio</p> --}}
 
                         {{-- Mensaje dinámico --}}
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message  }}</p>
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
 
