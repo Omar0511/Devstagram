@@ -27,6 +27,10 @@
                         placeholder="Tu Nombre..."
                         class="border p-3 w-full rounded-lg"
                     >
+
+                    @error('name')
+                        <p>El Nombre es Obligatorio</p>
+                    @enderror
                 </div>
 
                 <div class="mb-5">

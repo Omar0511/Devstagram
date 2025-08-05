@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+
 
 class RegisterController extends Controller
 {
+    use ValidatesRequests; // 👈 ESTE use es el que aplica el trait
     //
     public function index() {
         return view("auth.register");
@@ -19,6 +22,14 @@ class RegisterController extends Controller
         // dd($request);
 
         // De esta forma validamos los valores de los INPUT apuntando al NAME
-        dd($request->get('username') );
+        // dd($request->get('username') );
+
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+            'password_confirmation' => 'required'
+        ]);
     }
 }
