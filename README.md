@@ -21,8 +21,34 @@
     - Nos creará el archivo de configuración, si marca error ejecutamos:
       - **sail npm install -D tailwindcss@3 postcss autoprefixer** 
       - Después: **sail npx tailwindcss init -p**
-- Librería para mensajes dinámicos en LARAVEL **_$message_**
+- **Librería** para _mensajes_ dinámicos en LARAVEL **_$message_**
   - **_git clone https://github.com/MarcoGomesr/laravel-validation-en-espanol.git resources/lang_**
+  - Abrimos una consola para clonarlo, de preferencia:
+    - **GIT BASH**
+  - En la carpeta de:
+    - **config/app.php**
+    - Debemos de realizar la configuración en las líneas (aprox #85):
+      - ```
+        // 'locale' => env('APP_LOCALE', 'en'),
+        'locale' => env('APP_LOCALE', 'es'),
+
+        // 'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
+        'fallback_locale' => env('APP_FALLBACK_LOCALE', 'es'),
+
+        // 'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
+        'faker_locale' => env('APP_FAKER_LOCALE', 'es_ES'),
+      ```
+-  También en la carpeta de
+   -  **.env**
+   -  Debemos realizar la configuración en las líneas:
+   - ```
+        # APP_LOCALE=en
+        APP_LOCALE=es
+        # APP_FALLBACK_LOCALE=en
+        APP_FALLBACK_LOCALE=es
+        # APP_FAKER_LOCALE=en_US
+        APP_FAKER_LOCALE=es_E
+   ```
 
 ### Creación del proyecto
 
