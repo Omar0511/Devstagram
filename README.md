@@ -203,3 +203,30 @@
 | POST       | /clientes           | store   | clientes.store   |
 | DELETE     | /clientes/{cliente} | destroy | clientes.destroy |
 
+## MIGRACIONES
+
+- Las migraciones se les conoce como el control de versiones de tu base de datos, de esta forma se puede crear la base de datos y compartir el diseño con el quipo de trabajo.
+- Si deseas agregar nuevas tablas o columnas a una tabla existente, puedes hacerlo con una nueva migración, si el resultado no fue el deseado, puedes revertir esa migración.
+  - **_sail php artisan migrate_**
+  - **_sail artisan migrate_**
+- En caso que necesitemos revertir o regresar ese cambio en la base datos:
+  - **_artisan migrate:rollback_**
+- Si fueron varias migraciones que salieron mal, en este ejemplo las últimas 5:
+  - **_sail artisan migrate:rollback --step=5_**
+- Más comandos para crear migraciones:
+  - **_sail artisan make:migration agregar_imagen_user_**
+  - **_sail php artisan make:migration agregar_imagen_user**
+- Las migraciones que solocan en la carpeta de: 
+  - **databases/migrations**
+- Primero debemos correr:
+  - **_sail artisan migrate_**
+- En la consola, logueado con **WSL**, ingresamos: 
+  - **_sail mysql -u_**
+- Para poder ver la base de datos, **NOTA**, si no te deja conectar a un gestor de base de datos, necesitamos abrir el archivo de:
+  - **_.env_**
+- Ahí encontraremos el usuario y contraseña que se creo para acceder
+- Después ejecutamos:
+  - **_sail php artisan migrate:rollback_**
+- Para limpiar la BD, pero como si las necesitaremos, ejecutaremos el primer comando
+  - **_sail artisan migrate_**
+- 
