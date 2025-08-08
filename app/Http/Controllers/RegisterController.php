@@ -28,10 +28,9 @@ class RegisterController extends Controller
             /* Puede estar como arreglo:
             'name' => ['required', 'min:5'], */
             'name' => 'required|max: 30',
-            'email' => 'required',
-            'username' => 'required',
+            'username' => 'required|unique:users|min:3|max:20',
+            'email' => 'required|unique:users|email|max:60',
             'password' => 'required',
-            'password_confirmation' => 'required'
         ]);
     }
 }

@@ -13,7 +13,8 @@
 
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
             {{-- <form action="/register" method="POST">, cambiamos cuando en web.php usamos el NAME --}}
-                <form action="{{ route('register') }}" method="POST">
+                {{-- novalidate: se recomienda deshabilitarlo, es la validación de HTML5 --}}
+                <form action="{{ route('register') }}" method="POST" novalidate>
                 {{-- csrf: genera un campo oculto para evitar ataques, directiva de LARAVEL --}}
                 @csrf
 
@@ -50,6 +51,10 @@
                         placeholder="Tu Nombre de Usuario..."
                         class="border p-3 w-full rounded-lg"
                     >
+
+                    @error('username')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="mb-5">
@@ -62,6 +67,10 @@
                         placeholder="Tu Email de Registro..."
                         class="border p-3 w-full rounded-lg"
                     >
+
+                    @error('email')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="mb-5">
@@ -74,6 +83,10 @@
                         placeholder="Tu Password de Registro..."
                         class="border p-3 w-full rounded-lg"
                     >
+
+                    @error('password')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="mb-5">
