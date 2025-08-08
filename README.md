@@ -229,4 +229,12 @@
   - **_sail php artisan migrate:rollback_**
 - Para limpiar la BD, pero como si las necesitaremos, ejecutaremos el primer comando
   - **_sail artisan migrate_**
+- Al hacer esto, el usuario root y su contraseña, no funcionarían, se conectarían a los creados por el contenedor y LARAVE, una vez detenido el contenedor, ya te dejará conectarte.
+- En el archivo:
+  - **_.env_**
+- Creamos la variable:
+  - **FORWARD_DB_PORT=3307**
+- Debajo de _PASSWORD_
+- Limpiar caché
+  - **_php artisan config:cache_**
 - 
