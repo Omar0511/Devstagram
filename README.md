@@ -49,6 +49,16 @@
         # APP_FAKER_LOCALE=en_US
         APP_FAKER_LOCALE=es_E
    ```
+- Eloquent (ORM):
+  - Laravel incluye su propio **ORM**: Object Relacional Mapper, que hace muy sencillo interactuar con tu base d edatos.
+  - En **Eloquent**, cada tabla tiene su propio modelo; ese modelo interactúa únicamente con esa tabla y tiene las funciones necesarias para crear registros, obtenerlos, actualizarlos y eliminarlos.
+  - Forma de crear un modelo, el nombre del nombre es en Singular:
+    - **__sail php artisan make:model Cliente__**
+  - **CONVENCIONES**
+  - Cuando crear el Modelo: **Cliente**, __Eloquent__ asume que la tabla se va llamar: **clientes**
+  - Si el Modelo se llama: **Producto**, __Eloquent__ espera una tabla llamada **productos**
+  - Puede ser un problema llamar a tu modelo: **Proveedor**, porque __Eloquent__ espera la tabla llamada: **provedors**, pero se puede reescribir en el modelo.
+  - 
 
 ### Creación del proyecto
 

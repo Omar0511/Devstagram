@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
@@ -34,7 +35,18 @@ class RegisterController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
 
-        dd('Creando el usuario...');
+        // dd('Creando el usuario...');
+        User::create(
+            [
+                // Pueden ser ambas formas
+                // 'name' => $request->get('name'),
+                'name'=>$request->name,
+                'username'=>$request->username,
+                'email'=>$request->email,
+                // 'password' -> bcrypt($request->get('password')),
+                'password'=>$request->password
+            ]
+        );
 
     }
 }
