@@ -237,4 +237,10 @@
 - Debajo de _PASSWORD_
 - Limpiar caché
   - **_php artisan config:cache_**
+- Si tenemos en el FORMULARIO un campo que no esta en la **BASE DE DATOS** que se creo con la migración, tenemos que ejecutar una nueva migración, ejemplo:
+  - **__sail php artisan make:migration add_username_to_users_table__**
+  - Una vez creada la migración, abrimos el archivo que se creo en: **migrations** y ahí debemos agregar el campo nuevo
+  - Después de haber creado la migración, debemos ejecutar:
+    - **__sail php artisan migrate_**
+  - Estos reflejará el campo nuevo creado en la **BASE DE DATOS**
 - 
