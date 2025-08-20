@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-
+// FACADES: proporciona una serie de funciones que hacen algo muy específico
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -44,12 +45,13 @@ class RegisterController extends Controller
                 'username'=>$request->username,
                 'email'=>$request->email,
                 // 'password' -> bcrypt($request->get('password')),
-                'password'=>$request->password
+                // Aquí usamos el método Hash::make() para encriptar la contraseña
+                'password'=>Hash::make($request->password)
             ]
         );
 
         // Redireccionamos al usuario
-        
+
 
     }
 }
