@@ -17,10 +17,13 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+
+    // fillable: Los datos que esperamos que el USUARIO nos proporcione y los que se van a INSERTAR en la BD
     protected $fillable = [
         'name',
         'email',
         'password',
+        'username' // Aquí agregamos el nuevo campo que no estaba en la tabla original
     ];
 
     /**

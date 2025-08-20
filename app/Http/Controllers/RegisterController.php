@@ -48,5 +48,8 @@ class RegisterController extends Controller
             ]
         );
 
+        // Redireccionamos al usuario
+        
+
     }
 }
