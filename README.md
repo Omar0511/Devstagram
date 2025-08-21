@@ -58,6 +58,8 @@
   - Cuando crear el Modelo: **Cliente**, __Eloquent__ asume que la tabla se va llamar: **clientes**
   - Si el Modelo se llama: **Producto**, __Eloquent__ espera una tabla llamada **productos**
   - Puede ser un problema llamar a tu modelo: **Proveedor**, porque __Eloquent__ espera la tabla llamada: **provedors**, pero se puede reescribir en el modelo.
+  - Forma de crear un **CONTROLLER**
+    - **__sail php artisan make:controller NombreControllador__**
   - 
 
 ### Creación del proyecto

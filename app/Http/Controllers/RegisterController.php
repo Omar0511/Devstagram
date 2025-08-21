@@ -56,7 +56,7 @@ class RegisterController extends Controller
         );
 
         // Redireccionamos al usuario
-
+        return redirect()->route('posts.index');
 
     }
 }
