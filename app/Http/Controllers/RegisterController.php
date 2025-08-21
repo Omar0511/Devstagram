@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 // FACADES: proporciona una serie de funciones que hacen algo muy específico
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class RegisterController extends Controller
 {
@@ -42,7 +43,8 @@ class RegisterController extends Controller
                 // Pueden ser ambas formas
                 // 'name' => $request->get('name'),
                 'name'=>$request->name,
-                'username'=>$request->username,
+                // Helpers: Str, click derecho y le damos en importar CLASS, slug: convierte a URL: ej: omar-user-01, si ingresamos: omar user 01
+                'username'=>Str::slug($request->username),
                 'email'=>$request->email,
                 // 'password' -> bcrypt($request->get('password')),
                 // Aquí usamos el método Hash::make() para encriptar la contraseña
