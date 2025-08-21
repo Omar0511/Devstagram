@@ -27,6 +27,9 @@ class RegisterController extends Controller
         // De esta forma validamos los valores de los INPUT apuntando al NAME
         // dd($request->get('username') );
 
+        // Modificar y reescribir el request, para que nos arroje la alerta de validación
+        $request->request->add( ['username' => Str::slug($request->username)] );
+
         $this->validate($request, [
             /* Puede estar como arreglo:
             'name' => ['required', 'min:5'], */
@@ -44,7 +47,7 @@ class RegisterController extends Controller
                 // 'name' => $request->get('name'),
                 'name'=>$request->name,
                 // Helpers: Str, click derecho y le damos en importar CLASS, slug: convierte a URL: ej: omar-user-01, si ingresamos: omar user 01
-                'username'=>Str::slug($request->username),
+                'username'=>$request->username,
                 'email'=>$request->email,
                 // 'password' -> bcrypt($request->get('password')),
                 // Aquí usamos el método Hash::make() para encriptar la contraseña

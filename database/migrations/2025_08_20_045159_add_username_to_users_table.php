@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             // Aquí agregamos el nuevo campo que no esta en la tabla original
-            $table->string('username');
+            $table->string('username')->unique();
+            // UNIQUE: significa que no se puede repetir el valor de este campo en la tabla, esto ayuda a SLUG, cuando convierte a URL valida que no sean repetidos
+            // Cada vez que realizamos cambios en la migración, debemos ejecutar el comando: php artisan migrate:rollback --step=1
         });
     }
 

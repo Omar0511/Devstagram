@@ -253,4 +253,12 @@
   - Después de haber creado la migración, debemos ejecutar:
     - **__sail php artisan migrate_**
   - Estos reflejará el campo nuevo creado en la **BASE DE DATOS**
-- 
+- Cada vez que realizamos cambios en la migración (archivo), debemos ejecutar el comando:
+  - **__sail php artisan migrate:rollback --step=1__**
+  - Esto retornará la última migración
+  - Después ejecutamos:
+    - **__sail php artisan migrate__**
+  - Para que tome los nuevos cambios
+  - Si deseamos eliminar toda la información al realizar la migración, ejecutamos:
+    - **__**__sail php artisan migrate:refresh__**
+  - 
