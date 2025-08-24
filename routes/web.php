@@ -16,8 +16,10 @@ Route::get('/', function () {
  * Al agregarlo, en los enlaces a href=, lo llamaremos con: {{ ruoute('register' ) }}
 */
 Route::get('/register', [RegisterController::class, 'index'] )->name('register');
+// Store: guardar, almacenar información
 Route::post('/register', [RegisterController::class, 'store'] );
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store'])->name('login');
 
 Route::get('/muro', [PostController::class, 'index'])->name('posts.index');

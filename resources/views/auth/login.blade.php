@@ -14,7 +14,7 @@
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
             {{-- <form action="/register" method="POST">, cambiamos cuando en web.php usamos el NAME --}}
                 {{-- novalidate: se recomienda deshabilitarlo, es la validación de HTML5 --}}
-                <form action="{{ route('register') }}" method="POST" novalidate>
+                <form action="{{ route('login') }}" method="POST" novalidate>
                 {{-- csrf: genera un campo oculto para evitar ataques, directiva de LARAVEL --}}
                 @csrf
 
