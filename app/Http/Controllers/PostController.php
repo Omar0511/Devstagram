@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// Se agrega para que MIDDLEWARE funcione
+use Illuminate\Routing\Controller;
 
 class PostController extends Controller
 {
