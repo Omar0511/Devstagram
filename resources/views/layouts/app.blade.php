@@ -15,13 +15,34 @@
             <div class="container mx-auto flex justify-between items-center">
                 <h1 class="text-3xl font-black">DevStagram</h1>
 
-                <nav class="flex gap-2 items-center">
-                    <a class="font-bold uppercase text-gray-600 text-sm" href="#">Login</a>
-                    {{-- <a class="font-bold uppercase text-gray-600 text-sm" href="/register">Crear Cuenta</a> --}}
+                {{-- Validar si un usuario esta autenticado --}}
+                {{-- @if (auth()->user())
+                    <p>Autenticado</p>
+                @else
+                    <p>No Autenticado</p>
+                @endif --}}
 
-                    {{-- Cuando agregamos NAME en el ROUTE (web.php), cambiamos a ROUTE --}}
-                    <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Crear Cuenta</a>
-                </nav>
+                {{-- Otra opción --}}
+                @auth
+                    <nav class="flex gap-2 items-center">
+                        <a class="font-bold uppercase text-gray-600 text-sm" href="/login">
+                            Hola: <span class="font-normal">{{ auth()->user()->username }}</span>
+                        </a>
+
+                        {{-- Cuando agregamos NAME en el ROUTE (web.php), cambiamos a ROUTE --}}
+                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Cerrar Sesión</a>
+                    </nav>
+                @endauth
+
+                @guest
+                    <nav class="flex gap-2 items-center">
+                        <a class="font-bold uppercase text-gray-600 text-sm" href="/login">Login</a>
+                        {{-- <a class="font-bold uppercase text-gray-600 text-sm" href="/register">Crear Cuenta</a> --}}
+
+                        {{-- Cuando agregamos NAME en el ROUTE (web.php), cambiamos a ROUTE --}}
+                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Crear Cuenta</a>
+                    </nav>
+                @endguest
             </div>
         </header>
 
