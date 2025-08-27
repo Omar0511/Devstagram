@@ -30,7 +30,15 @@
                         </a>
 
                         {{-- Cuando agregamos NAME en el ROUTE (web.php), cambiamos a ROUTE --}}
-                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('logout') }}">Cerrar Sesión</a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            {{-- <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('logout') }}">
+                                Cerrar Sesión
+                            </a> --}}
+
+                            {{-- Evitamos ataques --}}
+                            @csrf
+                            <button type="submit" class="font-bold uppercase text-gray-600 text-sm">Cerrar Sesión</button>
+                        </form>
                     </nav>
                 @endauth
 
