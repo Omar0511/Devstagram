@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 // Se agrega para que MIDDLEWARE funcione
 use Illuminate\Routing\Controller;
@@ -14,10 +15,11 @@ class PostController extends Controller
         $this->middleware('auth');
     }
 
-    public function index() {
+    public function index(User $user) {
         // dd('Desde muro');
         // Revisar que usuario esta autenticado
         // dd( auth()->user() );
+        // dd($user->username);
 
         return view('dashboard');
     }
