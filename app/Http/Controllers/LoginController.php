@@ -15,13 +15,16 @@ class LoginController extends Controller
     }
 
     public function store(Request $request) {
+        // dd($request->remember);
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
+
         // Comprobar si las credenciales son correctas
-        if (!auth()->attempt($request->only('email', 'password'))) {
+        if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
             // BACK: Coloca el mensaje en la sesión
             return back()->with('mensaje', 'Credenciales incorrectas');
         }

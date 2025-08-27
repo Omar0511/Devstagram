@@ -56,6 +56,12 @@
                     @enderror
                 </div>
 
+                <div class="mb-5">
+                    {{-- Mantener la sesión abierta con: remember --}}
+                    <input type="checkbox" name="remember">
+                    <label for=""  class="text-gray-500 text-sm font-bold">Mantener sesión abierta</label>
+                </div>
+
                 <input
                     type="submit"
                     value="Iniciar Sesión"
