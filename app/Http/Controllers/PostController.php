@@ -21,6 +21,8 @@ class PostController extends Controller
         // dd( auth()->user() );
         // dd($user->username);
 
-        return view('dashboard');
+        return view('dashboard', [
+            'user' => $user
+        ]);
     }
 }
