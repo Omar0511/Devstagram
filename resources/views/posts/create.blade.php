@@ -16,13 +16,13 @@
                 @csrf
 
                 <div class="mb-5">
-                    <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">Nombre</label>
+                    <label for="titulo" class="mb-2 block uppercase text-gray-500 font-bold">Título</label>
 
                     <input
                         type="text"
-                        name="name"
-                        id="name"
-                        placeholder="Tu Nombre..."
+                        name="titulo"
+                        id="titulo"
+                        placeholder="Tu Titulo de la Publicación..."
                         {{-- El error, resaltará solo si existe un error, va de la mano con la directiva: error que esta debajo --}}
                         class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
                         {{-- Para mantener el valor ingresado en el INPUT --}}
@@ -37,6 +37,32 @@
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
+
+                <div class="mb-5">
+                    <label for="descripcion" class="mb-2 block uppercase text-gray-500 font-bold">Dscripción</label>
+
+                    <textarea
+                        name="descripcion"
+                        id="descripcion"
+                        placeholder="Tu Descripción de la Publicación..."
+                        {{-- El error, resaltará solo si existe un error, va de la mano con la directiva: error que esta debajo --}}
+                        class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
+                    >{{ old('titulo') }}</textarea>
+
+                    @error('name')
+                        {{-- Mensaje estático --}}
+                        {{-- <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">El Nombre es Obligatorio</p> --}}
+
+                        {{-- Mensaje dinámico --}}
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <input
+                    type="submit"
+                    value="Crear Cuenta"
+                    class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"
+                >
             </form>
         </div>
     </div>
