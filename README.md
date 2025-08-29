@@ -60,7 +60,8 @@
   - Puede ser un problema llamar a tu modelo: **Proveedor**, porque __Eloquent__ espera la tabla llamada: **provedors**, pero se puede reescribir en el modelo.
   - Forma de crear un **CONTROLLER**
     - **__sail php artisan make:controller NombreControllador__**
-  - 
+  - Iconos:
+    - **https://heroicons.com**
 
 ### Creación del proyecto
 

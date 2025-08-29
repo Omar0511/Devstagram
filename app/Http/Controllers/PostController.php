@@ -25,4 +25,8 @@ class PostController extends Controller
             'user' => $user
         ]);
     }
+
+    public function create() {
+        dd('Desde create');
+    }
 }
