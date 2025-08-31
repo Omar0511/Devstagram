@@ -60,8 +60,16 @@
   - Puede ser un problema llamar a tu modelo: **Proveedor**, porque __Eloquent__ espera la tabla llamada: **provedors**, pero se puede reescribir en el modelo.
   - Forma de crear un **CONTROLLER**
     - **__sail php artisan make:controller NombreControllador__**
-  - Iconos:
-    - **https://heroicons.com**
+- Iconos:
+  - **https://heroicons.com**
+- Dropzone 
+  - Sirve para arrastrar las imágenes y poder subirlas al servidor
+  - https://www.dropzone.dev/
+  - **_sail npm i --save dropzone_**
+  - La siguiente línea también debemos copiarla
+    - <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+  - Tenemos que configurar en:
+    - resources/js/**app.js**
 
 ### Creación del proyecto
 
@@ -264,4 +272,4 @@
   - Para que tome los nuevos cambios
   - Si deseamos eliminar toda la información al realizar la migración, ejecutamos:
     - **__**__sail php artisan migrate:refresh__**
-  - 
+- 
