@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Devstagram - @yield('titulo')</title>
+
+        {{-- Reserva un espacio para reservar hojas de estilos, solo donde las necesitemos --}}
+        @stack('styles')
+
         {{-- Se agrega para poder usar los estilos de TAILWINDCSS --}}
         {{-- @vite('resources/css/app.css') --}}
         @vite(['resources/css/app.css', 'resources/js/app.js'])
