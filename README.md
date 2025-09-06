@@ -193,11 +193,13 @@
     - nos arrojará los comandos que podemos usar en LARAVEL
     - Si llegará a marcar error en Laravel, algo relacionado con: **SESSIONS**, ejecutamos:
       - **_sail php artisan migrate_**
-
-- Creando un CONTROLADOR con ARTISAN:
-  - **sail artisan make:controller --help** -> para ver lo que podemos pasarle
-  - **sail artisan make:controller RegisterControllr** Ejemplo
-  - - **sail artisan make:controller Auth\\RegisterControllr** Si queremos crearlo en una Carpeta
+    - Creando un CONTROLADOR con ARTISAN:
+      - **sail artisan make:controller --help** -> para ver lo que podemos pasarle
+      - **sail artisan make:controller RegisterControllr** Ejemplo
+      - **sail artisan make:controller Auth\\RegisterControllr** Si queremos crearlo en una Carpeta
+    - Crear todo junto:
+      - **_sail artisan make:model --migration --controller --factory Nombre_**
+      - Nota: El **Nombre** debe ser en _SINGULAR_
 
 ## REQUEST
 
@@ -280,4 +282,7 @@
   - Para que tome los nuevos cambios
   - Si deseamos eliminar toda la información al realizar la migración, ejecutamos:
     - **__**__sail php artisan migrate:refresh__**
-- 
+
+## FACTORY
+
+- Es una forma de hacer _TESTING_ a una base de datos.
