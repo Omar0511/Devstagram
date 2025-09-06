@@ -243,6 +243,8 @@
   - **_artisan migrate:rollback_**
 - Si fueron varias migraciones que salieron mal, en este ejemplo las últimas 5:
   - **_sail artisan migrate:rollback --step=5_**
+  - Podemos poner después:
+  - **_sail artisan migrate_**
 - Más comandos para crear migraciones:
   - **_ sail artisan make:migration agregar_imagen_user_ _**
   - **_ sail php artisan make:migration agregar_imagen_user _**
@@ -286,4 +288,36 @@
 
 - Es una forma de hacer _TESTING_ a una base de datos.
 - Se utilizan únicamente en _Desarrollo_.
-- 
+- Para correr los _Factories_
+  - **_sail artisan tinker_**
+- Es un:
+  - _CLI_
+- Con el que nuestra aplicación puede interactuar, para correr una prueba:
+  - **_sail artisan tinker_**
+    - **$usuario = User::find(3)**
+  - Debemos buscar el _ID_ en la tabla de **USERS**, puede ser otro, esto es una prueba y elegimos ese _ID_
+  - Después ejecutamos:
+    - **_App\Models\Post::factory()_**
+  - Si nos marca error, debemos agregear en el archivo:
+    - **Post.php**
+    - _use Illuminate\Database\Eloquent\Factories\HasFactory;_
+  - Dentro de la Clase agregamos:
+    - _use HasFactory;_
+  - Y volver a correrlo:
+    - **_App\Models\Post::factory()_**
+  - Esto ya nos dará respuesta
+  - También debería poderse con:
+    - _Post::factory()_
+  - En nuestro caso la forma de aquí arriba no funcino, sino la que tiene: **App\....**
+  - Después ejecutamos:
+    - **_App\Models\Post::factory()->times(200)->create();_**
+  - Si marca algún error como:
+  - ```
+        > App\Models\Post::factory()->times(200)->create();
+
+            Illuminate\Database\QueryException  SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`devstagram`.`posts`, CONSTRAINT `posts_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE) (Connection: mysql, SQL: insert into `posts` (`titulo`, `descripcion`, `imagen`, `user_id`, `updated_at`, `created_at`) values (Vel in suscipit omnis nulla., Placeat modi debitis omnis ea quia eos voluptas nobis aut ut commodi optio quibusdam sit quae sint eum enim delectus qui voluptas., d1fa083b-515e-3683-a31a-47ada3eb1549jpg, 1, 2025-09-06 19:29:14, 2025-09-06 19:29:14)).
+    ```
+  - Debemos poner los **ID*S** que tenemos en la base de datos y debemos salirnos con:
+    - **exit**
+  - Nos salimos de la consola y volvemos a entrar, esto con la finalidad que se actualice la información y ya no nos marqué error, sino nos salimos nos estará marcando error en la base de datos...
+  - 
