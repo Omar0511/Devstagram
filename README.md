@@ -285,3 +285,5 @@
 ## FACTORY
 
 - Es una forma de hacer _TESTING_ a una base de datos.
+- Se utilizan únicamente en _Desarrollo_.
+- 
