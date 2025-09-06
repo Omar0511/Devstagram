@@ -73,7 +73,8 @@
 - InterventionImage:
   - **packgae auto discovery**
     -  Es la instalación de un paquete, actualiza el archivo _autoload_ de **composer**
-  - **_sail composer require intervention/image_**
+  - **_sail composer require intervention/image:^2.7_**
+  - Para este proyecto, usamos la versión: **2.7**
   - Si es **Laravel** > 8, no debemos configurar nada, si es menor si, dentro de:
     - **config/app.js**
   - Dentro de la documenación de: **INTERVENTION IMAGE**, dice como...
