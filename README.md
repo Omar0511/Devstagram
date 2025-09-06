@@ -4,18 +4,17 @@
 
 ## Herramientas y/o Tecnologías
 
-- PHP
-- LARAVEL
+- PHP (8.3)
+- LARAVEL (12.20.0)
 - BLADE
 - HTML5
 - CSS3
 - JAVASCRIPT
-- VUE.JS
 - DOCKER
 - SAIL
-- MYSQL
+- MYSQL (8.1)
 - VITE
-- TAILWIND CSS
+- TAILWIND CSS (3.4)
   - Instalación: **sail npm install -D tailwindcss postcss autoprefixer**
   - Después: **npx tailwindcss init -p**
     - Nos creará el archivo de configuración, si marca error ejecutamos:
@@ -62,7 +61,7 @@
     - **__sail php artisan make:controller NombreControllador__**
 - Iconos:
   - **https://heroicons.com**
-- Dropzone 
+- Dropzone (6.0)
   - Sirve para arrastrar las imágenes y poder subirlas al servidor
   - https://www.dropzone.dev/
   - **_sail npm i --save dropzone_**
@@ -70,7 +69,7 @@
     - <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
   - Tenemos que configurar en:
     - resources/js/**app.js**
-- InterventionImage:
+- InterventionImage (2.7)
   - **packgae auto discovery**
     -  Es la instalación de un paquete, actualiza el archivo _autoload_ de **composer**
   - **_sail composer require intervention/image:^2.7_**
@@ -245,9 +244,9 @@
 - Si fueron varias migraciones que salieron mal, en este ejemplo las últimas 5:
   - **_sail artisan migrate:rollback --step=5_**
 - Más comandos para crear migraciones:
-  - **_sail artisan make:migration agregar_imagen_user_**
-  - **_sail php artisan make:migration agregar_imagen_user**
-- Las migraciones que solocan en la carpeta de: 
+  - **_ sail artisan make:migration agregar_imagen_user_ _**
+  - **_ sail php artisan make:migration agregar_imagen_user _**
+- Las migraciones se colocan en la carpeta de: 
   - **databases/migrations**
 - Primero debemos correr:
   - **_sail artisan migrate_**
@@ -260,7 +259,7 @@
   - **_sail php artisan migrate:rollback_**
 - Para limpiar la BD, pero como si las necesitaremos, ejecutaremos el primer comando
   - **_sail artisan migrate_**
-- Al hacer esto, el usuario root y su contraseña, no funcionarían, se conectarían a los creados por el contenedor y LARAVE, una vez detenido el contenedor, ya te dejará conectarte.
+- Al hacer esto, el usuario root y su contraseña, no funcionarían, se conectarían a los creados por el contenedor y _LARAVEL_, una vez detenido el contenedor, ya te dejará conectarte.
 - En el archivo:
   - **_.env_**
 - Creamos la variable:
@@ -269,19 +268,19 @@
 - Limpiar caché
   - **_php artisan config:cache_**
 - Si tenemos en el FORMULARIO un campo que no esta en la **BASE DE DATOS** que se creo con la migración, tenemos que ejecutar una nueva migración, ejemplo:
-  - **__sail php artisan make:migration add_username_to_users_table__**
+  - **_ sail php artisan make:migration add_username_to_users_table_ _**
   - Una vez creada la migración, abrimos el archivo que se creo en: **migrations** y ahí debemos agregar el campo nuevo
-  - Después de haber creado la migración, debemos ejecutar:
-    - **__sail php artisan migrate_**
+  - Después de haber creado los campos nuevos en la migración, debemos ejecutar:
+    - **_sail php artisan migrate_**
   - Estos reflejará el campo nuevo creado en la **BASE DE DATOS**
 - Cada vez que realizamos cambios en la migración (archivo), debemos ejecutar el comando:
-  - **__sail php artisan migrate:rollback --step=1__**
+  - **_sail php artisan migrate:rollback --step=1_**
   - Esto retornará la última migración
   - Después ejecutamos:
-    - **__sail php artisan migrate__**
+    - **_sail php artisan migrate_**
   - Para que tome los nuevos cambios
   - Si deseamos eliminar toda la información al realizar la migración, ejecutamos:
-    - **__**__sail php artisan migrate:refresh__**
+    - **_sail php artisan migrate:refresh_**
 
 ## FACTORY
 
