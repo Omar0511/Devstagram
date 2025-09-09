@@ -6,9 +6,12 @@ use App\Models\User;
 use Illuminate\Http\Request;
 // Se agrega para que MIDDLEWARE funcione
 use Illuminate\Routing\Controller;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class PostController extends Controller
 {
+    use ValidatesRequests;
+    
     //Proteger rutas
     public function __construct() {
         // Middleware: Protege las rutas, para que solo los usuarios autenticados puedan acceder

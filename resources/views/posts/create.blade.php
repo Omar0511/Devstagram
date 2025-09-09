@@ -36,7 +36,7 @@
                         value="{{ old('name') }}"
                     >
 
-                    @error('name')
+                    @error('titulo')
                         {{-- Mensaje estático --}}
                         {{-- <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">El Nombre es Obligatorio</p> --}}
 
@@ -56,7 +56,7 @@
                         class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
                     >{{ old('descripcion') }}</textarea>
 
-                    @error('name')
+                    @error('descripcion')
                         {{-- Mensaje estático --}}
                         {{-- <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">El Nombre es Obligatorio</p> --}}
 
