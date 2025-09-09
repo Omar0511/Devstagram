@@ -18,7 +18,7 @@
         </div>
 
         <div class="md:w-1/2 bg-white p-10 rounded-lg shadow-xl mt-10 md:mt-0">
-            <form action="{{ route('register') }}" method="POST" novalidate>
+            <form action="{{ route('posts.store') }}" method="POST" novalidate>
                 {{-- csrf: genera un campo oculto para evitar ataques, directiva de LARAVEL --}}
                 @csrf
 
@@ -54,7 +54,7 @@
                         placeholder="Tu Descripción de la Publicación..."
                         {{-- El error, resaltará solo si existe un error, va de la mano con la directiva: error que esta debajo --}}
                         class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
-                    >{{ old('titulo') }}</textarea>
+                    >{{ old('descripcion') }}</textarea>
 
                     @error('name')
                         {{-- Mensaje estático --}}

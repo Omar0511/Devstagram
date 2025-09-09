@@ -30,4 +30,17 @@ class PostController extends Controller
         // dd('Desde create');
         return view('posts.create');
     }
+
+    // Store: Almacenar en la base de datos
+    public function store(Request $request) {
+        // dd('Desde store');
+
+        $this->validate(
+            $request,
+            [
+                'titulo' => 'required|max:255',
+                'descripcion' => 'required'
+            ]
+        );
+    }
 }
