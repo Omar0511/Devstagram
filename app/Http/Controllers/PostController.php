@@ -11,7 +11,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 class PostController extends Controller
 {
     use ValidatesRequests;
-    
+
     //Proteger rutas
     public function __construct() {
         // Middleware: Protege las rutas, para que solo los usuarios autenticados puedan acceder
@@ -42,7 +42,8 @@ class PostController extends Controller
             $request,
             [
                 'titulo' => 'required|max:255',
-                'descripcion' => 'required'
+                'descripcion' => 'required',
+                'imagen' => 'required'
             ]
         );
     }
