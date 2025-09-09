@@ -55,6 +55,16 @@ class PostController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
+        /**
+         * Otra forma de hacerlo sin el método create, es con new Post
+         * $post = new Post();
+         * $post->titulo = $request->titulo;
+         * $post->descripcion = $request->descripcion;
+         * $post->imagen = $request->imagen;
+         * $post->user_id = auth()->user()->id;
+         * $post->save();
+        */
+
         // return redirect()->route('posts.index', auth()->user()->username);
         return redirect()->route('posts.index', $request->user()->username);
     }
