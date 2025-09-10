@@ -19,6 +19,14 @@ class PostController extends Controller
         $this->middleware('auth');
     }
 
+    // Filtrar por Colección, este método ya no se usa y no permite paginar
+    // public function index() {
+
+    //     return view('dashboard', [
+    //         'user' => $user
+    //     ]);
+    // }
+
     public function index(User $user) {
         // dd('Desde muro');
         // Revisar que usuario esta autenticado
