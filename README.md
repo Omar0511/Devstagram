@@ -105,6 +105,10 @@
         - Evento             Habitación
                  -> Lugar ->
           Evento             Habitación
+    - Una vez que creamos la **RELACIÓN**, ejecutamos:
+      - **_sail artisan tinker_**
+      -  **$usuario = User::find(3)** <- el ID debe estar en la BD
+      -  **$usuario->posts**
 
 ### Creación del proyecto
 
