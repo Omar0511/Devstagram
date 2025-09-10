@@ -19,17 +19,33 @@
                 </p>
 
                 <p class="text-gray-800 text-sm mb-3 font-bold mt-5">
-                    <span class="font-normal">Seguidores</span>
+                    0<span class="font-normal">Seguidores</span>
                 </p>
 
                 <p class="text-gray-800 text-sm mb-3 font-bold">
-                    <span class="font-normal">Siguiendo</span>
+                    0<span class="font-normal">Siguiendo</span>
                 </p>
 
                 <p class="text-gray-800 text-sm mb-3 font-bold">
-                    <span class="font-normal">Post</span>
+                    0<span class="font-normal">Post</span>
                 </p>
             </div>
         </div>
     </div>
+
+    <section class="container mx-auto mt-10">
+        <h2 class="text-3xl text-center font-black my-10">Publicaciones</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {{-- Recorremos los posts --}}
+            {{-- @dd($posts) --}}
+            @foreach ($posts as $post)
+                <div class="mb-10">
+                    <a href="">
+                        <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="Imagen del post {{ $post->titulo }}">
+                    </a>
+                </div>
+            @endforeach
+        </div>
+    </section>
 @endsection
