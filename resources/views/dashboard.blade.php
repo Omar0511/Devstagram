@@ -36,16 +36,20 @@
     <section class="container mx-auto mt-10">
         <h2 class="text-3xl text-center font-black my-10">Publicaciones</h2>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {{-- Recorremos los posts --}}
-            {{-- @dd($posts) --}}
-            @foreach ($posts as $post)
-                <div class="mb-10">
-                    <a href="">
-                        <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="Imagen del post {{ $post->titulo }}">
-                    </a>
-                </div>
-            @endforeach
-        </div>
+        @if ($posts->count())
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {{-- Recorremos los posts --}}
+                {{-- @dd($posts) --}}
+                @foreach ($posts as $post)
+                    <div class="mb-10">
+                        <a href="">
+                            <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="Imagen del post {{ $post->titulo }}">
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        @else
+            <p class="text-gray-600 uppercase text-sm text-center font-bold">No hay posts</p>
+        @endif
     </section>
 @endsection
