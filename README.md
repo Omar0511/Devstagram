@@ -109,6 +109,9 @@
       - **_sail artisan tinker_**
       -  **$usuario = User::find(3)** <- el ID debe estar en la BD
       -  **$usuario->posts**
+      -  **$post = Post::fin(1);**
+      -  **$post = App\Models\Post::find(1);**
+      -  **$post->user**
 
 ### Creación del proyecto
 

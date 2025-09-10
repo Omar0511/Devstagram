@@ -16,4 +16,12 @@ class Post extends Model
         'imagen',
         'user_id'
     ];
+
+    // Relación inversa
+    public function user()
+    {
+        // belongsTo = Muchos a Uno (Muchos posts pertenecen a un usuario)
+        // return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->select( ['name', 'username'] );
+    }
 }
