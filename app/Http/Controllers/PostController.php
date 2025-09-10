@@ -48,12 +48,12 @@ class PostController extends Controller
             ]
         );
 
-        Post::create([
-            'titulo' => $request->titulo,
-            'descripcion' => $request->descripcion,
-            'imagen' => $request->imagen,
-            'user_id' => auth()->user()->id
-        ]);
+        // Post::create([
+        //     'titulo' => $request->titulo,
+        //     'descripcion' => $request->descripcion,
+        //     'imagen' => $request->imagen,
+        //     'user_id' => auth()->user()->id
+        // ]);
 
         /**
          * Otra forma de hacerlo sin el método create, es con new Post
@@ -64,6 +64,16 @@ class PostController extends Controller
          * $post->user_id = auth()->user()->id;
          * $post->save();
         */
+
+        // Tercer forma de guardar registros en la BD
+        $request->user()->posts()->create(
+            [
+                'titulo' => $request->titulo,
+                'descripcion' => $request->descripcion,
+                'imagen' => $request->imagen,
+                'user_id' => auth()->user()->id
+            ]
+        );
 
         // return redirect()->route('posts.index', auth()->user()->username);
         return redirect()->route('posts.index', $request->user()->username);
