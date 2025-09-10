@@ -24,9 +24,13 @@ class PostController extends Controller
         // Revisar que usuario esta autenticado
         // dd( auth()->user() );
         // dd($user->username);
+        // dd($user->id);
+
+        $posts = Post::where('user_id', $user->id)->get();
 
         return view('dashboard', [
-            'user' => $user
+            'user' => $user,
+            'posts' => $posts
         ]);
     }
 
