@@ -77,6 +77,34 @@
   - Si es **Laravel** > 8, no debemos configurar nada, si es menor si, dentro de:
     - **config/app.js**
   - Dentro de la documenación de: **INTERVENTION IMAGE**, dice como...
+  - ## RELACIONES
+    - Las relaciones en _Eloquent_ son métodos que existen en tus modelos.
+    - Un Modelo tendrá un método y un tipo de relación, así como el Modelo con el cuál esta relacionado, a esto se le conoce como: **COLECCIÓN**
+    - Sintaxis:
+      - **$user->posts**
+      - User -> Posta
+    - Tipos de relaciones:
+      - _One To One_
+        - Usuario -> Perfil
+        - Uno a Uno
+      - _Has One Of Many_
+        - Usuario -> Ordenes
+        - Obtienes la última orden
+      - _One To Many_
+        - Usuario -> Posts
+        - Uno a Muchos
+      - _Hash One Through_
+        - Doctor    Pacientes -> Habitación
+                 -> 
+                    Pacientes -> Habitación
+        - Uno a Uno pero con otra relación
+      - _Belongs To_
+        - Usuario <- Post
+        - Relación Inversa
+      - _Has Many Through_
+        - Evento             Habitación
+                 -> Lugar ->
+          Evento             Habitación
 
 ### Creación del proyecto
 
