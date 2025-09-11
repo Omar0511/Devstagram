@@ -294,6 +294,10 @@
 - Ahí encontraremos el usuario y contraseña que se creo para acceder
 - Después ejecutamos:
   - **_sail php artisan migrate:rollback_**
+  - **Nota:**
+    - Si ya habías corrido esa migración antes y cambiaste cosas en el archivo, entonces primero deberías revertir la migración y luego volver a correrla:
+    - **_sail artisan migrate:rollback_**
+    - **_sail artisan migrate_**
 - Para limpiar la BD, pero como si las necesitaremos, ejecutaremos el primer comando
   - **_sail artisan migrate_**
 - Al hacer esto, el usuario root y su contraseña, no funcionarían, se conectarían a los creados por el contenedor y _LARAVEL_, una vez detenido el contenedor, ya te dejará conectarte.
