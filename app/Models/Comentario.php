@@ -15,4 +15,9 @@ class Comentario extends Model
         'post_id',
         'comentario'
     ];
+
+    // Relación inversa
+    public function user() {
+        return $this->belongsTo(User::class)->select( ['name', 'username'] );
+    }
 }
