@@ -28,7 +28,8 @@
                     {{-- Comentarios --}}
                     <p class="text-xl font-bold text-center mb-4">Agrega un Nuevo Comentario</p>
 
-                    <form action="">
+                    <form action="{{ route('comentarios.store', ['user' => $post->user, 'post' => $post]) }}" method="POST">
+                        @csrf
                         <div class="mb-5">
                             <label for="comentario" class="mb-2 block uppercase text-gray-500 font-bold">Añade un Comentario</label>
 

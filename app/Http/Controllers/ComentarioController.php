@@ -7,4 +7,7 @@ use Illuminate\Http\Request;
 class ComentarioController extends Controller
 {
     //
+    public function store() {
+        dd('Desde ComentarioController');
+    }
 }
