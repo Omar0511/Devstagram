@@ -47,7 +47,7 @@
                 {{-- @foreach ($user->posts as $post) --}}
                 @foreach ($posts as $post)
                     <div class="mb-10">
-                        <a href="{{ route('posts.show', $post) }}">
+                        <a href="{{ route('posts.show', ['post' => $post, 'user' => $user]) }}">
                             <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="Imagen del post {{ $post->titulo }}">
                         </a>
                     </div>
