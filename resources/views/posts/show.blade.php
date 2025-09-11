@@ -24,37 +24,38 @@
         </div>
         <div class="md:w-1/2 p-5">
             <div class="shadow bg-white p-5 mb-5">
-                {{-- Comentarios --}}
-                <p class="text-xl font-bold text-center mb-4">Agrega un Nuevo Comentario</p>
+                @auth
+                    {{-- Comentarios --}}
+                    <p class="text-xl font-bold text-center mb-4">Agrega un Nuevo Comentario</p>
 
+                    <form action="">
+                        <div class="mb-5">
+                            <label for="comentario" class="mb-2 block uppercase text-gray-500 font-bold">Añade un Comentario</label>
 
-                <form action="">
-                    <div class="mb-5">
-                        <label for="comentario" class="mb-2 block uppercase text-gray-500 font-bold">Añade un Comentario</label>
+                            <textarea
+                                name="comentario"
+                                id="comentario"
+                                placeholder="Agrega un Comentario..."
+                                {{-- El error, resaltará solo si existe un error, va de la mano con la directiva: error que esta debajo --}}
+                                class="border p-3 w-full rounded-lg @error('comentario') border-red-500 @enderror"
+                            ></textarea>
 
-                        <textarea
-                            name="comentario"
-                            id="comentario"
-                            placeholder="Agrega un Comentario..."
-                            {{-- El error, resaltará solo si existe un error, va de la mano con la directiva: error que esta debajo --}}
-                            class="border p-3 w-full rounded-lg @error('comentario') border-red-500 @enderror"
-                        ></textarea>
+                            @error('comentario')
+                                {{-- Mensaje estático --}}
+                                {{-- <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">El Nombre es Obligatorio</p> --}}
 
-                        @error('comentario')
-                            {{-- Mensaje estático --}}
-                            {{-- <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">El Nombre es Obligatorio</p> --}}
+                                {{-- Mensaje dinámico --}}
+                                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                            @enderror
+                        </div>
 
-                            {{-- Mensaje dinámico --}}
-                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <input
-                        type="submit"
-                        value="Comentar"
-                        class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"
-                    >
-                </form>
+                        <input
+                            type="submit"
+                            value="Comentar"
+                            class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"
+                        >
+                    </form>
+                @endauth
             </div>
         </div>
     </div>

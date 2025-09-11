@@ -16,7 +16,9 @@ class PostController extends Controller
     //Proteger rutas
     public function __construct() {
         // Middleware: Protege las rutas, para que solo los usuarios autenticados puedan acceder
-        $this->middleware('auth');
+        // $this->middleware('auth');
+        // Except: permite que las rutas show e index no requieran autenticación
+        $this->middleware('auth')->except(['show', 'index']);
     }
 
     // Filtrar por Colección, este método ya no se usa y no permite paginar
