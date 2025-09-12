@@ -10,6 +10,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 // Con esta línea solucionamos el problema de: autorizeauthorize
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
 {
@@ -123,6 +124,13 @@ class PostController extends Controller
 
         // Eliminar el post
         $post->delete();
+
+        // Eliminar la imagen
+        $imagen_path = public_path('uploads/' . $post->imagen);
+
+        if (File::exists($imagen_path)) {
+            unlink($imagen_path);
+        }
 
         // Redireccionar
         return redirect()->route('posts.index', auth()->user()->username);
