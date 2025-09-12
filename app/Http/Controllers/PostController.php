@@ -104,4 +104,17 @@ class PostController extends Controller
             'user' => $user
         ]);
     }
+
+    public function destroy(Post $post) {
+        dd('Eliminando...');
+
+        // Ejecutar el Policy
+        // $this->authorize('delete', $post);
+
+        // Eliminar la imagen
+        // $post->delete();
+
+        // Redireccionar
+        // return redirect()->route('posts.index', auth()->user()->username);
+    }
 }

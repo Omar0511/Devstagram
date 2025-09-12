@@ -21,6 +21,26 @@
 
                 <p class="mt-5">{{ $post->descripcion }}</p>
             </div>
+
+            @auth
+                @if ($post->user_id === auth()->user()->id)
+                    {{-- <p class="font-bold text-gray-600 mt-10">Tú eres el dueño de esta publicación</p> --}}
+
+                    {{-- Formulario para eliminar --}}
+                    {{-- El action va a la ruta que creamos en web.php --}}
+                    {{-- El method debe ser POST, pero con @method('DELETE') indicamos que es DELETE --}}
+                    <form action="">
+                        {{-- @csrf
+                        @method('DELETE') --}}
+
+                        <input
+                            type="submit"
+                            value="Eliminar Publicación"
+                            class="bg-red-500 hover:bg-red-600 p-2 rounded text-white font-bold mt-4 cursor-pointer"
+                        />
+                    </form>
+                @endif
+            @endauth
         </div>
         <div class="md:w-1/2 p-5">
             <div class="shadow bg-white p-5 mb-5">
@@ -73,7 +93,7 @@
                                 </a>
 
                                 <p>{{ $comentario->comentario }}</p>
-                                
+
                                 <p class="text-sm text-gray-500">{{ $comentario->created_at->diffForHumans() }}</p>
                             </div>
                         @endforeach
