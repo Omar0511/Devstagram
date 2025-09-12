@@ -8,10 +8,14 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+// Con esta línea solucionamos el problema de: autorizeauthorize
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class PostController extends Controller
 {
     use ValidatesRequests;
+    // Y con esta línea solucionamos el problema de: authorize
+    use AuthorizesRequests;
 
     //Proteger rutas
     public function __construct() {
@@ -106,15 +110,21 @@ class PostController extends Controller
     }
 
     public function destroy(Post $post) {
-        dd('Eliminando...');
+        // dd('Eliminando...');
+
+        // if ($post->user_id === auth()->user()->id) {
+        //     dd('Si es la misma persona');
+        // } else {
+        //     dd('No es la misma persona');
+        // }
 
         // Ejecutar el Policy
-        // $this->authorize('delete', $post);
+        $this->authorize('delete', $post);
 
-        // Eliminar la imagen
-        // $post->delete();
+        // Eliminar el post
+        $post->delete();
 
         // Redireccionar
-        // return redirect()->route('posts.index', auth()->user()->username);
+        return redirect()->route('posts.index', auth()->user()->username);
     }
 }

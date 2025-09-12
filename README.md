@@ -359,4 +359,14 @@
   - Debemos poner los **ID*S** que tenemos en la base de datos y debemos salirnos con:
     - **exit**
   - Nos salimos de la consola y volvemos a entrar, esto con la finalidad que se actualice la información y ya no nos marqué error, sino nos salimos nos estará marcando error en la base de datos...
-  - 
+
+## POLICY
+
+- Creación:
+  - **_sail artisan make:policy NombrePolicy --model=Post_**
+- Con el _--model=Post_, le asociamos un **MODELO**
+- Se crean en:
+  - _Devstagram\app\Policies_
+- Esto permite al usuario poder:
+  - **VER, ELIMINAR o ACTUALIZAR** algún registro
+- 
