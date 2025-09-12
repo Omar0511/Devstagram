@@ -29,9 +29,10 @@
                     {{-- Formulario para eliminar --}}
                     {{-- El action va a la ruta que creamos en web.php --}}
                     {{-- El method debe ser POST, pero con @method('DELETE') indicamos que es DELETE --}}
-                    <form action="">
-                        {{-- @csrf
-                        @method('DELETE') --}}
+                    <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                        @csrf
+                        {{-- Se le conoce como método SPOOFING, el cual permite agregar otros métodos, ya que el navegador navitcamente contiene los métodos: GET y POST --}}
+                        @method('DELETE')
 
                         <input
                             type="submit"
