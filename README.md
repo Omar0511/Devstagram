@@ -112,6 +112,8 @@
       -  **$post = Post::fin(1);**
       -  **$post = App\Models\Post::find(1);**
       -  **$post->user**
+- Iconos
+  - [HeroIcons](https://heroicons.com/)
 
 ### Creación del proyecto
 
