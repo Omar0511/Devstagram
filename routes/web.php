@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\ImagenController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
@@ -39,3 +40,6 @@ Route::post('/{user:username}/posts/{post}', [ComentarioController::class, 'stor
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');
+
+// Likes a las publicaciones
+Route::post('/posts/{post}/likes', action: [LikeController::class, 'store'])->name('posts.like.store');
