@@ -21,7 +21,7 @@
 
                     @auth
                         @if ($user->id === auth()->user()->id)
-                            <a href="{{ route('perfil.index', $user) }}" class="text-gray-500 hover:text-gray-600 cursor-pointer">
+                            <a href="{{ route('perfil.index') }}" class="text-gray-500 hover:text-gray-600 cursor-pointer">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"

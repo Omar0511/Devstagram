@@ -28,17 +28,21 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store'])->name('login');
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
+// Rutas para el perfil
+Route::get('/editar-perfil', [PerfilController::class, 'index'])->name('perfil.index');
+Route::post('/editar-perfil', [PerfilController::class, 'store'])->name('perfil.store');
+
 // Route::get('/muro', [PostController::class, 'index'])->name('posts.index');
 // Route MOdule Binding
-Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
+
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 // Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 Route::get('/{user:username}/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
-Route::post('/{user:username}/posts/{post}', [ComentarioController::class, 'store'])->name('comentarios.store');
-
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+Route::post('/{user:username}/posts/{post}', [ComentarioController::class, 'store'])->name('comentarios.store');
 
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');
 
@@ -46,6 +50,4 @@ Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.sto
 Route::post('/posts/{post}/likes', action: [LikeController::class, 'store'])->name('posts.likes.store');
 Route::delete('/posts/{post}/likes', [LikeController::class, 'destroy'])->name('posts.likes.destroy');
 
-// Rutas para el perfil
-Route::get('{user:username}/editar-perfil', [PerfilController::class, 'index'])->name('perfil.index');
-Route::post('{user:username}/editar-perfil', [PerfilController::class, 'store'])->name('perfil.store');
+Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');

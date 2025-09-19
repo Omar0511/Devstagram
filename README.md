@@ -236,6 +236,11 @@
     - Crear todo junto:
       - **_sail artisan make:model --migration --controller --factory Nombre_**
       - Nota: El **Nombre** debe ser en _SINGULAR_
+    - Cuando se realicen cambios en las rutas y los cambios no se reflejen, ejecutamos:
+      - **_sail artisan route:cache_**
+    - Si los cambios siguen sin refrescarse, ejecutamos:
+      - **_sail artisan route:list_**
+    - 
 
 ## REQUEST
 
