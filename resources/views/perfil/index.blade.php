@@ -7,7 +7,9 @@
 @section('contenido')
     <div class="md:flex md:justify-center">
         <div class="md:w-1/2 bg-white shadow p-6">
-            <form action="" class="mt-10 md:mt-0">
+            <form action="{{ route('perfil.store') }}" class="mt-10 md:mt-0" method="POST" enctype="multipart/form-data">
+                @csrf
+
                 <div class="mb-5">
                     <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">Username</label>
 
@@ -15,11 +17,11 @@
                         type="text"
                         name="username"
                         id="username"
-                        placeholder="Tu Nomre de Usuario..."
+                        placeholder="Tu Nomre de Usuario"
                         {{-- El error, resaltará solo si existe un error, va de la mano con la directiva: error que esta debajo --}}
                         class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
                         {{-- Para mantener el valor ingresado en el INPUT --}}
-                        value={{ auth()->user()->username }}"
+                        value="{{ auth()->user()->username }}"
                     >
 
                     @error('username')
