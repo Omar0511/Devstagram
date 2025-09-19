@@ -29,6 +29,9 @@ class LoginController extends Controller
             return back()->with('mensaje', 'Credenciales incorrectas');
         }
 
+        // Reescribir el nuevo password
+        
+
         return redirect()->route('posts.index', auth()->user()->username);
     }
 }
