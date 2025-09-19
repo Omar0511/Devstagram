@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-// Se agrega para que MIDDLEWARE funcione
-use Illuminate\Routing\Controller;
-use Illuminate\Foundation\Validation\ValidatesRequests;
+use App\Models\User;
 use Illuminate\Support\Str;
+// Se agrega para que MIDDLEWARE funcione
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Intervention\Image\Facades\Image;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class PerfilController extends Controller
 {
@@ -35,7 +37,38 @@ class PerfilController extends Controller
             // 'username' => "required|unique:user,|min:3|max:20|", cuando son más de 3, se recomienda agregagaros en un arreglo
             // NOT_IN: para evitar que se usen ciertos nombres de usuario
             // IN: para permitir solo ciertos nombres de usuario, como roles también
-            'username' => ['required', 'unier:users,username, '.auth()->user()->id, 'min:3', 'max:20', 'not_in:twitter,facebook,admin,root'],
+            'username' => ['required', 'unique:users,username, '.auth()->user()->id, 'min:3', 'max:20', 'not_in:twitter,facebook,admin,root'],
         ]);
+
+        if ($request->imagen) {
+            // dd('Existe imagen');
+
+            $imagen = $request->file('imagen');
+
+            //generar un id unico para las imagenes
+            $nombreImagen = Str::uuid() . "." . $imagen->extension();
+
+            $imagenServidor = Image::make($imagen);
+            $imagenServidor->fit(1000, 1000);
+
+            //agregamos la imagen a la  carpeta en public donde se guardaran las imagenes
+            $imagenPath = public_path('perfiles') . '/' . $nombreImagen;
+
+            //Una vez procesada la imagen entonces guardamos la imagen en la carpeta que creamos
+            $imagenServidor->save($imagenPath);
+
+            //retornamos el nombre de la imagen, que es el nombre que nos da el ID unico con uuid()
+            return response()->json(['imagen' => $nombreImagen]);
+        }
+
+        // Guardar cambios
+        $usuario = User::find(auth()->user()->id);
+
+        $usuario->username = $request->username;
+        $usuario->imagen = $nombreImagen ?? '';
+        $usuario->save();
+
+        // Redireccionar
+        return redirect()->route('posts.index', $usuario->username);
     }
 }
