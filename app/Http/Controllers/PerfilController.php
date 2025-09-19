@@ -56,16 +56,12 @@ class PerfilController extends Controller
 
             //Una vez procesada la imagen entonces guardamos la imagen en la carpeta que creamos
             $imagenServidor->save($imagenPath);
-
-            //retornamos el nombre de la imagen, que es el nombre que nos da el ID unico con uuid()
-            return response()->json(['imagen' => $nombreImagen]);
         }
 
         // Guardar cambios
         $usuario = User::find(auth()->user()->id);
-
         $usuario->username = $request->username;
-        $usuario->imagen = $nombreImagen ?? '';
+        $usuario->imagen = $nombreImagen ?? auth()->user()->imagen ?? null;
         $usuario->save();
 
         // Redireccionar
