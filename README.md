@@ -240,6 +240,8 @@
       - **_sail artisan route:cache_**
     - Si los cambios siguen sin refrescarse, ejecutamos:
       - **_sail artisan route:list_**
+    - Un atajo para crear:_MODELO, CONTROLADOR y MIGRACION_
+      - **_sail artisan make:model Follower -mc_**
     - 
 
 ## REQUEST
