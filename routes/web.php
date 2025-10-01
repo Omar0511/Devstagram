@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LoginController;
@@ -11,9 +12,13 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('principal');
-});
+// Route::get('/', function () {
+//     return view('principal');
+// });
+
+// Esta línea cambia cuando usamos Controladores con un solo método, cuando son invocables
+// Route::get('/', [HomeController::class, 'index'] )->name('home');
+Route::get('/', HomeController::class)->name('home');
 
 /**
  * ->name('register') en una ruta de Laravel tiene una función clave para nombrar rutas y facilitar su uso en todo el proyecto.
