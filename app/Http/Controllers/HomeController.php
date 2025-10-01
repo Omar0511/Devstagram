@@ -15,6 +15,9 @@ class HomeController extends Controller
     // Método invoable, es decir, se manda llamar automáticamente, es como un constructor
     public function __invoke()
     {
+        // Obtener a quienes seguimos
+        dd(auth()->user()->followings->pluck('id')->toArray());
+
         return view('home');
     }
 }
