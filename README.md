@@ -378,4 +378,10 @@
   - _Devstagram\app\Policies_
 - Esto permite al usuario poder:
   - **VER, ELIMINAR o ACTUALIZAR** algún registro
+
+## COMPONENTES
+
+- Un componente en Laravel (normalmente se refiere a los Blade Components) sirve para reutilizar código de interfaz y organizar mejor las vistas de tu aplicación.
+- Lo creamos de la siguiente manera:
+  - **_sail artisan make:component NombreComponente_**
 - 

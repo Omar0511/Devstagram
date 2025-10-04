@@ -7,12 +7,15 @@
 @endsection
 
 @section('contenido')
-    @if ($posts->count())
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {{-- @if ($posts->count())
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"> --}}
+
+            {{-- Estas 3 líneas NO se descomentan al comentar todo el código --}}
             {{-- Recorremos los posts --}}
             {{-- @dd($posts) --}}
             {{-- @foreach ($user->posts as $post) --}}
-            @foreach ($posts as $post)
+
+            {{-- @foreach ($posts as $post)
                 <div class="mb-10">
                     <a href="{{ route('posts.show', ['post' => $post, 'user' => $post->user]) }}">
                         <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="Imagen del post {{ $post->titulo }}">
@@ -26,12 +29,16 @@
         </div>
     @else
         <p class="text-center">No hay Posts, sigue a alguien para poder mostrar sus posts</p>
-    @endif
+    @endif --}}
 
+    {{-- Estas líneas NO se descomentan al comentar todo el código --}}
     {{-- Lo mismo pero con una DIRECTIVA de LARAVEL --}}
     {{-- @forelse ($posts as $post)
         <h1>{{ $post->titulo }}</h1>
     @empty
         <p>No hay Posts</p>
     @endforelse --}}
+
+    {{-- Agregando y utilizando COMPONENTETES --}}
+    <x-listar-post />
 @endsection
