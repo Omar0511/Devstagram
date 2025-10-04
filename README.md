@@ -384,4 +384,6 @@
 - Un componente en Laravel (normalmente se refiere a los Blade Components) sirve para reutilizar código de interfaz y organizar mejor las vistas de tu aplicación.
 - Lo creamos de la siguiente manera:
   - **_sail artisan make:component NombreComponente_**
+- Después de agregar contenido al _COMPONENTE_ y a la _VISTA_, es necesario realizar una limpieza:
+  - **_sail artisan view:clear_**
 - 

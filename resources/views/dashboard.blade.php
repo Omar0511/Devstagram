@@ -101,12 +101,14 @@
 
         {{-- @if ($user->posts->count()) --}}
 
-        @if ($posts->count())
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{-- @if ($posts->count())
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"> --}}
+
                 {{-- Recorremos los posts --}}
                 {{-- @dd($posts) --}}
                 {{-- @foreach ($user->posts as $post) --}}
-                @foreach ($posts as $post)
+
+                {{-- @foreach ($posts as $post)
                     <div class="mb-10">
                         <a href="{{ route('posts.show', ['post' => $post, 'user' => $post->user]) }}">
                             <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="Imagen del post {{ $post->titulo }}">
@@ -120,6 +122,9 @@
             </div>
         @else
             <p class="text-gray-600 uppercase text-sm text-center font-bold">No hay posts</p>
-        @endif
+        @endif --}}
+
+        {{-- Aquí inyectamos el COMPONENTE para REUTILIZARLO, el que se us o el HOME y LISTAR POST --}}
+        <x-listar-post :posts="$posts" />
     </section>
 @endsection
