@@ -58,6 +58,9 @@
                     {{ $post->likes->count() }}
 
                     <span class="font-normal">Likes</span>
+
+                    {{-- Llamando a un componente LIVEWIRE --}}
+                    <livewire:like-post :post="$post" />
                 </p>
             </div>
 

@@ -13,6 +13,7 @@
         {{-- @vite('resources/css/app.css') --}}
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+        @livewireStyles
     </head>
     <body class="bg-gray-100">
         <header class="p-5 border-b bg-white shadow">
@@ -81,5 +82,7 @@
             {{-- Oh esta otra forma, (más recomendada), se le conoce como DIRECTIVAS --}}
             {{ now()->year }}
         </footer>
+
+        @livewireScripts
     </body>
 </html>

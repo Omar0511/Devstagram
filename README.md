@@ -414,4 +414,25 @@
 
 - Instalación:
   - **_sail composer require livewire/livewire_**
+- Ejemplo:
+  - **_sail artisan make:livewire like-post_**
+- El comando nos creará:
+  - _CLASS: app/Livewire/LikePost.php_
+  - _VIEW:  resources/views/livewire/like-post.blade.php_
+- Nota:
+  - En un archivo que contiene la **VISTA**, siempre debemos tener un:
+    - _div_
+  - Con apertura y cierre
+- Para usar el componente en una vista, ej:
+  - **_<livewire:like-post />_**
+- Instalamos 2 extensiones:
+  - _Livewire Languaje Support - cierra_
+  - _Livewire goto - lennardv_
+  - _Livewire Docs - Austen Cameron_
+- Agregamos estas líneas:
+  - **@livewireStyles**
+- Va en la parte del _HEAD_, donde se ponen las hojas de estilo de: _CSS_
+- Y esta otra línea:
+  - **@livewireScripts**
+- Antes de cerrar el _BODY_, donde van los _SCRIPTS_ de _JS_
 - 
