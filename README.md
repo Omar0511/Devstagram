@@ -387,4 +387,31 @@
   - **_sail artisan make:component NombreComponente_**
 - Después de agregar contenido al _COMPONENTE_ y a la _VISTA_, es necesario realizar una limpieza:
   - **_sail artisan view:clear_**
+
+## LIVEWIRE
+
+- Es un Framework para Laravel.
+- Livewire es un framework Full Stack para Laravel.
+- Soluciona el problema de interacciones y realizar sitios web dinámicos de forma sencilla.
+- Si creas un proyecto con _React_ o _Vue_, es necesario crear un API; y una serie de pasos que pueden ser complicados, livewire soluciona este detalle.
+
+    ## ¿Como fuciona?
+
+    - _Livewire_ es una mezcla: **cliente/servidor**
+    - Utiliza _Templates de Blade_, pero también automáticamente realiza peticions _Ajax_ para actualizar y enviar infomación al servidor.
+    - El servidor obtiene datos, los procesa y realiza un re-render del _HTML_.
+    - _Livewire_ es suficientemente inteligente para realizar los cambios en el _DOM_, de lo que cambió.
+
+    ## Funciones
+
+    - Validación de formularios.
+    - Subida de archivos.
+    - Paginación.
+    - Redireccionar.
+    - Mensajes Flash.
+    - Autorización.
+    - Eventos.
+
+- Instalación:
+  - **_sail composer require livewire/livewire_**
 - 
