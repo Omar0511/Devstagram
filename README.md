@@ -70,7 +70,8 @@
   - Tenemos que configurar en:
     - resources/js/**app.js**
 - InterventionImage (2.7)
-  - **packgae auto discovery**
+  - Es una librería PHP que sirve para manipular imágenes fácilmente, por ejemplo:
+  - **package auto discovery**
     -  Es la instalación de un paquete, actualiza el archivo _autoload_ de **composer**
   - **_sail composer require intervention/image:^2.7_**
   - Para este proyecto, usamos la versión: **2.7**
