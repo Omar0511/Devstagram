@@ -11,6 +11,13 @@ class LikePost extends Component
     // public $mensaje;
 
     public $post;
+    public $isLiked;
+
+    // Es como un CONSTRUCTOR
+    public function mount($post)
+    {
+        $this->isLiked = $post->checkLike(auth()->user());
+    }
 
     public function like()
     {
@@ -19,11 +26,15 @@ class LikePost extends Component
         if ( $this->post->checkLike(auth()->user()) ) {
             // Eliminar el like
             $this->post->likes()->where('post_id', $this->post->id)->delete();
+
+            $this->isLiked = false;
         } else {
             // Agregar el like
             $this->post->likes()->create([
                 'user_id' => auth()->user()->id,
             ]);
+
+            $this->isLiked = true;
         }
     }
 
