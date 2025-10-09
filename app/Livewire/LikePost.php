@@ -14,7 +14,17 @@ class LikePost extends Component
 
     public function like()
     {
-        return "DEsde función like()";
+        // return "DEsde función like()";
+
+        if ( $this->post->checkLike(auth()->user()) ) {
+            // Eliminar el like
+            $this->post->likes()->where('post_id', $this->post->id)->delete();
+        } else {
+            // Agregar el like
+            $this->post->likes()->create([
+                'user_id' => auth()->user()->id,
+            ]);
+        }
     }
 
     public function render()
