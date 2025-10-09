@@ -62,23 +62,6 @@
                 @endauth
 
                 {{-- <p>0 Likes</p> --}}
-
-                <p class="font-bold">
-                    {{ $post->likes->count() }}
-
-                    <span class="font-normal">Likes</span>
-
-                    {{-- Para usar variables en las VISTAS con LIVWWIRE --}}
-                    {{-- @php
-                        $mensaje = "Hola desde Livewire";
-                    @endphp --}}
-
-                    {{-- Llamando a un componente LIVEWIRE --}}
-                    {{-- <livewire:like-post :mensaje="$mensaje" /> --}}
-
-                    {{-- <livewire:like-post :post="$post" /> --}}
-
-                </p>
             </div>
 
             <div>
