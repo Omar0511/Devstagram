@@ -152,6 +152,11 @@
         Control + X (para salir)
         source ~/.bashrc (para refrescar los cambios)
     ```
+- Despligue
+  - [DOMCLOUD](https://domcloud.co/)
+- Guía para despliegues en _Vercel_
+  - [VERCEL](https://blogjc.vercel.app/post/easy-deploy-php-laravel)
+
 
 #### SAIL
 
@@ -435,4 +440,9 @@
 - Y esta otra línea:
   - **@livewireScripts**
 - Antes de cerrar el _BODY_, donde van los _SCRIPTS_ de _JS_
+
+## NOTAS GIT GUB
+
+- Si no queremos que crea un repositorio como un _SUBMODULO_, ingresamos el siguiente comando:
+  - **_git rm --cached resources/lang_**
 - 
